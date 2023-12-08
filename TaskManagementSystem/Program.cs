@@ -4,14 +4,16 @@ using TaskManagementSystem;
 
 IUserService service = new UserService();
 
-while (true)
+bool isTrue = true;
+while (isTrue)
 {
     Console.WriteLine("1. Add task");
     Console.WriteLine("2. Task info");
     Console.WriteLine("3. Display all tasks");
     Console.WriteLine("4. Sort tasks by Due Date");
     Console.WriteLine("5. Remove task");
-    Console.Write("Enter your option[1-5]: ");
+    Console.WriteLine("6. Exit.");
+    Console.Write("Enter your option[1-6]: ");
 
     string opt = Console.ReadLine();
 
@@ -125,6 +127,10 @@ while (true)
             {
                 Console.WriteLine("Task was not found...");
             }
+            break;
+        case "6":
+            Console.WriteLine("GoodBye...");
+            isTrue = false;
             break;
     }
     Console.WriteLine();
