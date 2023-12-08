@@ -4,7 +4,7 @@ public interface ITask
 {
     int TaskId { get; set; }
     string Description { get; set; }
-    DateTime DueDate { get; set; }
+    DateOnly DueDate { get; set; }
 
     void DisplayTaskDetails();
 }

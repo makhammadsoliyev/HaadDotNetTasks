@@ -5,10 +5,10 @@ public class TaskItem : ITask
 {
     private int id;
     private string description;
-    private DateTime dueDate;
+    private DateOnly dueDate;
     public int TaskId { get => id; set => id = value; }
     public string Description { get => description; set => description = value; }
-    public DateTime DueDate { get => dueDate; set => dueDate = value; }
+    public DateOnly DueDate { get => dueDate; set => dueDate = value; }
 
     public void DisplayTaskDetails()
     {
