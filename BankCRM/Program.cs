@@ -191,6 +191,5 @@ while (isTrue)
             break;
             break;
     }
-
-
+    Console.WriteLine();
 }
