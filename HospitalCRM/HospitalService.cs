@@ -27,7 +27,7 @@ public class HospitalService : IHospitalService
             patient.Id = id;
             patient.RegisteredTime = patients[index].RegisteredTime;
             patients[index] = patient;
-            Console.WriteLine("Successfully updated...")
+            Console.WriteLine("Successfully updated...");
         }
     }
 

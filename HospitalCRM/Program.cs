@@ -65,6 +65,7 @@ while (isTrue)
                 DateOfBirth = birthDay,
                 PhoneNumber = number
             };
+            Console.Clear();
             hospitalService.CreatePatient(patient);
             break;
         case "2":
@@ -128,6 +129,7 @@ while (isTrue)
                     DateOfBirth = newBirthDay,
                     PhoneNumber = newNumber
                 };
+                Console.Clear();
                 hospitalService.UpdatePatient(newPatient, id);
             }
             break;
@@ -141,6 +143,7 @@ while (isTrue)
                 Console.Write("Enter patient id: ");
             }
             Patient patient2 = hospitalService.GetPatient(patientId);
+            Console.Clear();
             if (patient2 == null)
             {
                 Console.WriteLine("Patient was not found...");
@@ -152,6 +155,7 @@ while (isTrue)
             break;
         case "4":
             List<Patient> patients = hospitalService.GetAllPatients();
+            Console.WriteLine("All patients");
             foreach (var p in patients)
             {
                 Console.WriteLine($"Id: {p.Id}, Name: {p.FirstName} {p.LastName}, Phone number: {p.PhoneNumber}");
@@ -168,6 +172,7 @@ while (isTrue)
             }
 
             bool isDeleted = hospitalService.DeletePatient(id1);
+            Console.Clear();
             if (isDeleted)
             {
                 Console.WriteLine("Successfully deleted...");
@@ -179,6 +184,7 @@ while (isTrue)
             break;
         case "6":
             isTrue = false;
+            Console.Clear();
             Console.WriteLine("GoodBye...");
             break;
     }
