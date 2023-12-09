@@ -35,14 +35,14 @@ public class LibraryService : ILibraryService, ISortableService
         }
         else
         {
-            Console.WriteLine($"BookId: {book.BookId}, Title: {book.Title}, Author: {book.Author}, PublicationYear: {book.PublicationYear}");
+            Console.WriteLine($"BookId: {book.BookId}, Title: {book.Title}, Author: {book.Author.Name}, PublicationYear: {book.PublicationYear}");
         }
 
     }
 
     public void Sort(List<Book> books)
     {
-        books = books.OrderBy(book => book.PublicationYear).ToList();
+        this.books = books.OrderBy(book => book.PublicationYear).ToList();
         Console.WriteLine("Successfully sorted...");
     }
 

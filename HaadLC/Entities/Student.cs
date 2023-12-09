@@ -2,7 +2,7 @@
 
 public class Student
 {
-    private long id = 0;
+    private static long id = 0;
     public Student()
     {
         Id = ++id;
