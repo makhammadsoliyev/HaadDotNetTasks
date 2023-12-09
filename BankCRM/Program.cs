@@ -1,19 +1,19 @@
-﻿using HospitalCRM.Enitities;
-using HospitalCRM.Interfaces;
-using HospitalCRM.Services;
+﻿using BankCRM.BankService;
+using BankCRM.Entities;
+using BankCRM.Interfaces;
 using System.Text.RegularExpressions;
 
-IHospitalService hospitalService = new HospitalService();
+IBankService bankService = new BankService();
 string opt;
 bool isTrue = true;
 
 while (isTrue)
 {
-    Console.WriteLine("1. Register patient.");
-    Console.WriteLine("2. Update patient.");
-    Console.WriteLine("3. Get patient.");
-    Console.WriteLine("4. Get all patients.");
-    Console.WriteLine("5. Delete patient.");
+    Console.WriteLine("1. Register client.");
+    Console.WriteLine("2. Update client.");
+    Console.WriteLine("3. Get client.");
+    Console.WriteLine("4. Get all clients.");
+    Console.WriteLine("5. Delete client.");
     Console.WriteLine("6. Exit.");
     Console.Write("Enter your option[1-6]: ");
 
@@ -60,7 +60,7 @@ while (isTrue)
                 number = Console.ReadLine();
             }
 
-            Patient patient = new Patient
+            Client client = new Client
             {
                 FirstName = firstName,
                 LastName = lastName,
@@ -68,22 +68,21 @@ while (isTrue)
                 PhoneNumber = number
             };
             Console.Clear();
-            hospitalService.CreatePatient(patient);
+            bankService.CreateClient(client);
             break;
         case "2":
-            Console.Write("Enter patient id: ");
+            Console.Write("Enter client id: ");
             int id;
 
             while (!int.TryParse(Console.ReadLine(), out id) || id < 0)
             {
-                Console.WriteLine("Invalid patient id. Please enter a valid id.");
-                Console.Write("Enter patient id: ");
+                Console.WriteLine("Invalid client id. Please enter a valid id.");
+                Console.Write("Enter client id: ");
             }
-
-            Patient patient1 = hospitalService.GetPatient(id);
+            Client patient1 = bankService.GetClient(id);
             if (patient1 == null)
             {
-                Console.WriteLine("Patient was not found...");
+                Console.WriteLine("Client was not found...");
             }
             else
             {
@@ -124,7 +123,7 @@ while (isTrue)
                     newNumber = Console.ReadLine();
                 }
 
-                Patient newPatient = new Patient
+                Client newClient = new Client
                 {
                     FirstName = newFirstName,
                     LastName = newLastName,
@@ -132,49 +131,49 @@ while (isTrue)
                     PhoneNumber = newNumber
                 };
                 Console.Clear();
-                hospitalService.UpdatePatient(newPatient, id);
+                bankService.UpdateClient(newClient, id);
             }
             break;
         case "3":
-            Console.Write("Enter patient id: ");
-            int patientId;
+            Console.Write("Enter client id: ");
+            int clientId;
 
-            while (!int.TryParse(Console.ReadLine(), out patientId) || patientId < 0)
+            while (!int.TryParse(Console.ReadLine(), out clientId) || clientId < 0)
             {
-                Console.WriteLine("Invalid patient id. Please enter a valid id.");
-                Console.Write("Enter patient id: ");
+                Console.WriteLine("Invalid client id. Please enter a valid id.");
+                Console.Write("Enter client id: ");
             }
 
-            Patient patient2 = hospitalService.GetPatient(patientId);
+            Client client12 = bankService.GetClient(clientId);
             Console.Clear();
-            if (patient2 == null)
+            if (client12 == null)
             {
-                Console.WriteLine("Patient was not found...");
+                Console.WriteLine("Client was not found...");
             }
             else
             {
-                Console.WriteLine($"Id: {patient2.Id}, Name: {patient2.FirstName} {patient2.LastName}, Phone number: {patient2.PhoneNumber}");
+                Console.WriteLine($"Id: {client12.Id}, Name: {client12.FirstName} {client12.LastName}, Phone number: {client12.PhoneNumber}");
             }
             break;
         case "4":
-            List<Patient> patients = hospitalService.GetAllPatients();
-            Console.WriteLine("All patients");
-            foreach (var p in patients)
+            List<Client> clients = bankService.GetAllClients();
+            Console.WriteLine("All clients...");
+            foreach (var c in clients)
             {
-                Console.WriteLine($"Id: {p.Id}, Name: {p.FirstName} {p.LastName}, Phone number: {p.PhoneNumber}");
+                Console.WriteLine($"Id: {c.Id}, Name: {c.FirstName} {c.LastName}, Phone number: {c.PhoneNumber}");
             }
             break;
         case "5":
-            Console.Write("Enter patient id: ");
+            Console.Write("Enter client id: ");
             int id1;
 
             while (!int.TryParse(Console.ReadLine(), out id1) || id1 < 0)
             {
-                Console.WriteLine("Invalid patient id. Please enter a valid id.");
-                Console.Write("Enter patient id: ");
+                Console.WriteLine("Invalid client id. Please enter a valid id.");
+                Console.Write("Enter client id: ");
             }
 
-            bool isDeleted = hospitalService.DeletePatient(id1);
+            bool isDeleted = bankService.DeleteClient(id1);
             Console.Clear();
             if (isDeleted)
             {
@@ -182,7 +181,7 @@ while (isTrue)
             }
             else
             {
-                Console.WriteLine("Patient was not deleted...");
+                Console.WriteLine("Client was not deleted...");
             }
             break;
         case "6":
@@ -190,6 +189,8 @@ while (isTrue)
             Console.Clear();
             Console.WriteLine("GoodBye...");
             break;
+            break;
     }
-    Console.WriteLine();
+
+
 }
