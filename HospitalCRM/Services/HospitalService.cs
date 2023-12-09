@@ -1,4 +1,7 @@
-﻿namespace HospitalCRM;
+﻿using HospitalCRM.Enitities;
+using HospitalCRM.Interfaces;
+
+namespace HospitalCRM.Services;
 
 public class HospitalService : IHospitalService
 {

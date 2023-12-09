@@ -1,4 +1,5 @@
-﻿using HospitalCRM;
+﻿using HospitalCRM.Enitities;
+using HospitalCRM.Services;
 using System.Text.RegularExpressions;
 
 HospitalService hospitalService = new HospitalService();

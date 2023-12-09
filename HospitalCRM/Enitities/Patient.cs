@@ -1,4 +1,4 @@
-﻿namespace HospitalCRM;
+﻿namespace HospitalCRM.Enitities;
 
 public class Patient
 {
