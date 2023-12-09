@@ -6,6 +6,6 @@ public interface IStudentListService
 {
     void Add(Student student);
     void DisplayAll();
-    void SearchByGrade(decimal grade);
+    void SearchByGrade(int grade);
     void Sort(string by);
 }

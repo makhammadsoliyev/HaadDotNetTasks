@@ -1,4 +1,6 @@
-﻿namespace HaadLC.Entities;
+﻿using HaadLC.Enums;
+
+namespace HaadLC.Entities;
 
 public class Student
 {

@@ -1,4 +1,4 @@
-﻿namespace HaadLC.Entities;
+﻿namespace HaadLC.Enums;
 
 public enum Subject
 {

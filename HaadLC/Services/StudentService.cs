@@ -1,4 +1,5 @@
 ﻿using HaadLC.Entities;
+using HaadLC.Enums;
 using HaadLC.Interfaces;
 
 namespace HaadLC.StudentService;

@@ -26,7 +26,7 @@ public class StudentListService : IStudentListService
         }
     }
 
-    public void SearchByGrade(decimal grade)
+    public void SearchByGrade(int grade)
     {
         var res = students.FindAll(student => student.Grade == grade);
         Console.WriteLine("All students");

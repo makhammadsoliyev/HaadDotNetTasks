@@ -37,13 +37,13 @@ while (isTrue)
                 name = Console.ReadLine();
             }
 
-            Console.Write("Enter student grade(0-100): ");
-            decimal grade;
+            Console.Write("Enter student grade(1-12): ");
+            int grade;
 
-            while (!decimal.TryParse(Console.ReadLine(), out grade) || (grade < 0 || grade > 100))
+            while (!int.TryParse(Console.ReadLine(), out grade) || (grade < 1 || grade > 12))
             {
                 Console.WriteLine("Invalid student grade. Please enter a valid grade.");
-                Console.Write("Enter student grade(0-100): ");
+                Console.Write("Enter student grade(1-12): ");
             }
 
             Console.Write("Enter student birthDay: ");
@@ -67,13 +67,13 @@ while (isTrue)
             studentList.DisplayAll();
             break;
         case "3":
-            Console.Write("Enter student grade(0-100): ");
-            decimal g;
+            Console.Write("Enter student grade(1-12): ");
+            int g;
 
-            while (!decimal.TryParse(Console.ReadLine(), out g) || (g < 0 || g > 100))
+            while (!int.TryParse(Console.ReadLine(), out g) || (g < 1 || g > 12))
             {
                 Console.WriteLine("Invalid student grade. Please enter a valid grade.");
-                Console.Write("Enter student grade(0-100): ");
+                Console.Write("Enter student grade(1-12): ");
             }
             studentList.SearchByGrade(g);
             break;
