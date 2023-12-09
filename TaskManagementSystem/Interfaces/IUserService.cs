@@ -1,4 +1,6 @@
-﻿namespace TaskManagementSystem;
+﻿using TaskManagementSystem.Enitites;
+
+namespace TaskManagementSystem.Interfaces;
 
 public interface IUserService
 {

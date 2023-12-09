@@ -1,6 +1,7 @@
 ﻿
 using System.Globalization;
-using TaskManagementSystem;
+using TaskManagementSystem.Enitites;
+using TaskManagementSystem.Interfaces;
 
 IUserService service = new UserService();
 

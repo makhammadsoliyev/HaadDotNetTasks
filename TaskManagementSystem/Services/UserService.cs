@@ -1,13 +1,17 @@
-﻿
-namespace TaskManagementSystem;
+﻿using TaskManagementSystem.Enitites;
+using TaskManagementSystem.Interfaces;
+
+namespace TaskManagementSystem.Services;
 
 public class UserService : IUserService
 {
     private List<TaskItem> tasks;
+
     public UserService()
     {
         tasks = new List<TaskItem>();
     }
+
     public void AddTask(TaskItem task)
     {
         tasks.Add(task);
@@ -31,7 +35,7 @@ public class UserService : IUserService
 
     public void SortTasksByDueDate(bool asc = true)
     {
-        tasks = asc? tasks.OrderBy(task => task.DueDate).ToList() : tasks.OrderByDescending(task => task.DueDate).ToList();
+        tasks = asc ? tasks.OrderBy(task => task.DueDate).ToList() : tasks.OrderByDescending(task => task.DueDate).ToList();
     }
 
     public void TaskInfo(TaskItem task)

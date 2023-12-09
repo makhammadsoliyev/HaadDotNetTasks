@@ -1,10 +1,12 @@
-﻿
-namespace LibrarySystem;
+﻿using LibrarySystem.Entites;
+using LibrarySystem.Interfaces;
 
-public class Library : ILibrary, ISortable
+namespace LibrarySystem.Services;
+
+public class LibraryService : ILibraryService, ISortableService
 {
     private List<Book> books;
-    public Library()
+    public LibraryService()
     {
         books = new List<Book>();
     }

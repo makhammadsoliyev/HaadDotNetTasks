@@ -1,6 +1,7 @@
-﻿using LibrarySystem;
+﻿using LibrarySystem.Entites;
+using LibrarySystem.Services;
 
-Library library = new Library();
+LibraryService library = new LibraryService();
 string opt;
 
 

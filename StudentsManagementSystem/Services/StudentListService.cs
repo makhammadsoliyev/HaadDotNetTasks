@@ -1,9 +1,12 @@
-﻿namespace StudentsManagementSystem;
+﻿using StudentsManagementSystem.Enitites;
+using StudentsManagementSystem.Interfaces;
 
-public class StudentList : IStudentList
+namespace StudentsManagementSystem.Services;
+
+public class StudentListService : IStudentListService
 {
     private List<Student> students;
-    public StudentList()
+    public StudentListService()
     {
         students = new List<Student>();
     }

@@ -1,6 +1,7 @@
-﻿using StudentsManagementSystem;
+﻿using StudentsManagementSystem.Enitites;
+using StudentsManagementSystem.Services;
 
-StudentList studentList = new StudentList();
+StudentListService studentList = new StudentListService();
 string opt;
 bool isTrue = true;
 

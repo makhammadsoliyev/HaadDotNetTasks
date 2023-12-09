@@ -1,4 +1,4 @@
-﻿namespace LibrarySystem;
+﻿namespace LibrarySystem.Entites;
 
 public class Book
 {

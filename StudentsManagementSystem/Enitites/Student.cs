@@ -1,4 +1,4 @@
-﻿namespace StudentsManagementSystem;
+﻿namespace StudentsManagementSystem.Enitites;
 
 public class Student
 {

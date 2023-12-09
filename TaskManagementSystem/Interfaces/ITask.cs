@@ -1,4 +1,4 @@
-﻿namespace TaskManagementSystem;
+﻿namespace TaskManagementSystem.Interfaces;
 
 public interface ITask
 {
