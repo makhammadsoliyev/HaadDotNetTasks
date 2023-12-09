@@ -1,6 +1,6 @@
 ﻿using TaskManagementSystem.Interfaces;
 
-namespace TaskManagementSystem.Enitites;
+namespace TaskManagementSystem.Entities;
 
 public class TaskItem : ITask
 {

@@ -1,4 +1,4 @@
-﻿using TaskManagementSystem.Enitites;
+﻿using TaskManagementSystem.Entities;
 
 namespace TaskManagementSystem.Interfaces;
 
