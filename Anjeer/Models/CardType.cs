@@ -2,8 +2,8 @@
 
 public enum CardType
 {
-    UzCard = 1,
-    Humo,
-    Visa,
-    MasterCard
+    UZCARD = 1,
+    HUMO,
+    VISA,
+    MASTERCARD
 }
