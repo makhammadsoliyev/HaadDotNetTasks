@@ -5,11 +5,16 @@ namespace Anjeer.Services;
 
 public class CardService : ICardService
 {
+    #region Private Field
     private List<Card> cards;
+    #endregion
+    #region CTOR
     public CardService()
     {
         cards = new List<Card>();
     }
+    #endregion
+    #region Methods
     public void Create(Card card)
     {
         cards.Add(card);
@@ -44,4 +49,5 @@ public class CardService : ICardService
         cardToUpdate.CustomerId = card.CustomerId;
         cardToUpdate.ExpireDate = card.ExpireDate;
     }
+    #endregion 
 }
