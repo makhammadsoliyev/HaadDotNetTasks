@@ -17,6 +17,6 @@ public class Transaction
     public int CardId { get; set; }
     public decimal Amount { get; set; }
     public int EmployeeId { get; set; }
-    public TransactionType type { get; set; }
+    public TransactionType Type { get; set; }
     #endregion
 }

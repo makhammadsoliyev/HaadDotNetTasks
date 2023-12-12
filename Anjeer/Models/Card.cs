@@ -13,7 +13,7 @@ public class Card
     #endregion
     #region Properties
     public int Id { get; set; }
-    public CardType type { get; set; }
+    public CardType Type { get; set; }
     public string Number { get; set; }
     public DateOnly ExpireDate { get; set; }
     public string Password { get; set; }
