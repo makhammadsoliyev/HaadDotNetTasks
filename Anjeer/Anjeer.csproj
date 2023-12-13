@@ -7,4 +7,9 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="ConsoleTableExt" Version="3.2.0" />
+    <PackageReference Include="ConsoleTables" Version="2.6.1" />
+  </ItemGroup>
+
 </Project>
