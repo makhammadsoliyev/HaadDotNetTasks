@@ -8,4 +8,5 @@ public interface IBookService
     public bool Delete(int id);
     public void Update(int id, Book book);
     public Book GetById(int id);
+    public List<Book> GetAll();
 }

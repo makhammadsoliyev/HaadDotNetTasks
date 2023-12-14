@@ -18,6 +18,9 @@ public class BookService : IBookService
     public bool Delete(int id)
         => books.Remove(GetById(id));
 
+    public List<Book> GetAll()
+        => books;
+
     public Book GetById(int id)
         => books.FirstOrDefault(book => book.Id == id);
 

@@ -2,7 +2,7 @@
 
 public class Member
 {
-    private int _id = 0;
+    private static int _id = 0;
     public Member()
     {
         Id = _id++;
