@@ -1,13 +1,12 @@
 ﻿using ConsoleTables;
 using LibraryManagementSystem.Models;
 using LibraryManagementSystem.Services;
-using System.ComponentModel;
 
 namespace LibraryManagementSystem.Menus;
 
 public class BookMenu
 {
-    private BookService bookService;
+    public BookService bookService { get; set; }
     public BookMenu()
     {
         bookService = new BookService();
@@ -57,7 +56,7 @@ public class BookMenu
         };
         bookService.Add(book);
         Console.WriteLine($"{title} book successfully added...");
-        Thread.Sleep(1700);
+        Thread.Sleep(2000);
     }
     public void GetById()
     {
@@ -75,11 +74,12 @@ public class BookMenu
             table.AddRow(book.Id, book.Title, book.Author, book.BookGenre, book.PublicationYear, book.Availability);
             table.Options.EnableCount = false;
             table.Write();
-        }
+        } 
+        else
         {
             Console.WriteLine("Book was not found...");
         }
-        Thread.Sleep(1700);
+        Thread.Sleep(2000);
         
     }
     public void Update()
@@ -140,7 +140,7 @@ public class BookMenu
         {
             Console.WriteLine("Book was not found...");
         }
-        Thread.Sleep(1700);
+        Thread.Sleep(2000);
     }
     public void Delete()
     {
@@ -156,7 +156,7 @@ public class BookMenu
             Console.WriteLine("Book successfully deleted...");
         else
             Console.WriteLine("Book was not found...");
-        Thread.Sleep(1700);
+        Thread.Sleep(2000);
     }
     public void GetAll()
     {
@@ -168,7 +168,7 @@ public class BookMenu
         }
         table.Options.EnableCount = false;
         table.Write(Format.MarkDown);
-        Thread.Sleep(3000);
+        Thread.Sleep(4000);
     }
     public ConsoleTable DisplayMenu()
     {
@@ -180,6 +180,7 @@ public class BookMenu
         table.AddRow(5, "GetAll");
         table.AddRow(0, "Go Back");
         table.Options.EnableCount = false;
+
         return table;
     }
     public void Display()

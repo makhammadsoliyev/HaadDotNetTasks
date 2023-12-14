@@ -11,4 +11,5 @@ public interface IMemberService
     public void BorrowBook(int MemberId, Book book);
     public void ReturnBook(int MemberId, Book book);
     public List<Book> GetAllBorrowedBooks(int MemberId);
+    public List<Member> GetAll();
 }

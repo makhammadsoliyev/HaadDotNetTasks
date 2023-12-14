@@ -38,6 +38,9 @@ public class MemberService : IMemberService
     public bool Delete(int id)
         => members.Remove(GetById(id));
 
+    public List<Member> GetAll()
+        => members;
+
     public List<Book> GetAllBorrowedBooks(int MemberId)
     {
         Member member = GetById(MemberId);

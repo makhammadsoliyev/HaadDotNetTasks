@@ -8,6 +8,7 @@ public class MainMenu
     {
         ConsoleTable displayMenu = DisplayMenu();
         BookMenu booMenu = new BookMenu();
+        MemberMenu memberMenu = new MemberMenu(booMenu.bookService);
         bool circle = true;
 
         while (circle)
@@ -26,6 +27,7 @@ public class MainMenu
                     break;
                 case "2":
                     // MemberMenu
+                    memberMenu.Display();
                     break;
                 case "0":
                     // exit
