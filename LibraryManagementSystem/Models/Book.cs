@@ -5,7 +5,7 @@ public partial class Book
     private static int _id = 0;
     public Book()
     {
-        Id = _id++;
+        Id = ++_id;
     }
 
     public int Id { get; set; }
