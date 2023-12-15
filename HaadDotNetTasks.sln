@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HaadLC", "HaadLC\HaadLC.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anjeer", "Anjeer\Anjeer.csproj", "{6ACE3A3C-876E-4E10-B392-5ABC2DBC4F8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementSystem", "LibraryManagementSystem\LibraryManagementSystem.csproj", "{75584800-03DF-4DB9-9C36-3F1613B0A440}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagementSystem", "LibraryManagementSystem\LibraryManagementSystem.csproj", "{75584800-03DF-4DB9-9C36-3F1613B0A440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker", "ExpenseTracker\ExpenseTracker.csproj", "{691B7D98-92A8-4B8D-BFE1-0417D7EE8295}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{75584800-03DF-4DB9-9C36-3F1613B0A440}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75584800-03DF-4DB9-9C36-3F1613B0A440}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75584800-03DF-4DB9-9C36-3F1613B0A440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691B7D98-92A8-4B8D-BFE1-0417D7EE8295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691B7D98-92A8-4B8D-BFE1-0417D7EE8295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691B7D98-92A8-4B8D-BFE1-0417D7EE8295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691B7D98-92A8-4B8D-BFE1-0417D7EE8295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
