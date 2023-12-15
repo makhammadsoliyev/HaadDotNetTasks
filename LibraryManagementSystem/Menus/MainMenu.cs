@@ -35,7 +35,6 @@ public class MainMenu
                     break;
             }
         }
-        
     }
     public static ConsoleTable DisplayMenu()
     {
