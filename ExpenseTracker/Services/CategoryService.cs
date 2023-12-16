@@ -6,12 +6,11 @@ namespace ExpenseTracker.Services;
 public class CategoryService : ICategoryService
 {
     private List<Category> categories;
-    public List<Category> Categories { get; set; }
-
-    public CategoryService()
+    private ExpenseService expenseService;
+    public CategoryService(ExpenseService expenseService)
     {
-        categories = new List<Category>();
-        Categories = categories;
+        this.categories = new List<Category>();
+        this.expenseService = expenseService;
     }
 
     public Category Add(Category category)
@@ -21,19 +20,28 @@ public class CategoryService : ICategoryService
     }
 
     public bool Delete(int id)
-        => categories.Remove(categories.Find(category => category.Id == id));
+    {
+        Category categoryToDelete = categories.FirstOrDefault(category => category.Id == id);
+        expenseService.ExpenseList.RemoveAll(expense => expense.Category.Id == categoryToDelete.Id);
 
+        return categories.Remove(categoryToDelete);
+    }
     public List<Category> GetAll()
         => categories;
+
+    public List<Expense> GetAllExpensesByCategory(Category category)
+        => expenseService.ExpenseList.FindAll(expense => expense.Category.Id == category.Id);
 
     public Category GetById(int id)
         => categories.Find(category => category.Id == id);
 
-    public void Update(int id, Category category)
+    public Category Update(int id, Category category)
     {
-        Category categoryToUpdate = categories.Find(category => category.Id == id);
+        Category categoryToUpdate = categories.FirstOrDefault(category => category.Id == id);
         categoryToUpdate.Id = id;
         categoryToUpdate.Name = category.Name;
         categoryToUpdate.Description = category.Description;
+
+        return categoryToUpdate;
     }
 }

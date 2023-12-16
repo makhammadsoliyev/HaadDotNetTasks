@@ -1,4 +1,5 @@
 ﻿using ConsoleTables;
+using ExpenseTracker.Services;
 
 namespace ExpenseTracker.Menus;
 
@@ -6,18 +7,22 @@ public class MainMenu
 {
     public static void Main()
     {
+        // Services 
+        ExpenseService expenseService = new ExpenseService();
+        CategoryService categoryService = new CategoryService(expenseService);
         // ExpensesMenu
-        ExpensesMenu expensesMenu = new ExpensesMenu();
+        ExpensesMenu expensesMenu = new ExpensesMenu(expenseService, categoryService);
         // CategoriesMenu
-        CategoriesMenu categoriesMenu = new CategoriesMenu();
+        CategoriesMenu categoriesMenu = new CategoriesMenu(categoryService, expenseService);
         ConsoleTable table = DisplayChoices();
 
-
+        
         bool circle = true;
         string choice;
 
         while (circle)
         {
+            Console.Clear();
             table.Write(Format.MarkDown);
             Console.Write(">>> ");
             choice = Console.ReadLine();

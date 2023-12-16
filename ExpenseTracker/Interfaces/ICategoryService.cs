@@ -6,7 +6,8 @@ public interface ICategoryService
 {
     Category Add(Category category);
     Category GetById(int id);
-    void Update(int id, Category category);
+    List<Expense> GetAllExpensesByCategory(Category category);
+    Category Update(int id, Category category);
     bool Delete(int id);
     List<Category> GetAll();
 }

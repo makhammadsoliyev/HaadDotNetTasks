@@ -1,18 +1,65 @@
 ﻿using ConsoleTables;
+using ExpenseTracker.Models;
 using ExpenseTracker.Services;
 
 namespace ExpenseTracker.Menus;
 
 public class ExpensesMenu
 {
-    private ExpenseService expenseService;
-    public ExpensesMenu()
+    public ExpenseService expenseService;
+    public CategoryService categoryService;
+    public ExpensesMenu(ExpenseService expenseService, CategoryService categoryService)
     {
-        expenseService = new ExpenseService();
+        this.expenseService = expenseService;
+        this.categoryService = categoryService;
     }
     private void Add()
     {
+        decimal amount;
 
+        Console.Write("Enter amount: ");
+        while (!decimal.TryParse(Console.ReadLine(), out amount) || amount < 0)
+        {
+            Console.WriteLine("Invalid amount. Please enter a valid one.");
+            Console.Write("Enter amount: ");
+        }
+
+        string description;
+
+        Console.Write("Enter expense description: ");
+        description = Console.ReadLine();
+        while (string.IsNullOrWhiteSpace(description))
+        {
+            Console.Write("Enter expense description: ");
+            description = Console.ReadLine();
+        }
+
+        DateTime date = DateTime.Now;
+        Category category;
+
+        bool circle = true;
+        int id;
+
+        /*while (circle)
+        {
+            //categoriesMenu.GetAll();
+            Console.WriteLine("Enter categoryID");
+            Console.Write(">>> ");
+            while(int.TryParse(Console.ReadLine(), out id) || 0 <= id)
+            {
+                Console.WriteLine("Enter categoryID");
+                Console.Write(">>> ");
+            }
+            (category, List<Expense> _) = categoriesMenu.categoryService.GetById(id);
+            if (category is not null)
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Category was not found");
+            }
+        }*/
     }
 
     private void GetById()
