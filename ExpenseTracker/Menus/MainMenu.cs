@@ -10,10 +10,10 @@ public class MainMenu
         // Services 
         ExpenseService expenseService = new ExpenseService();
         CategoryService categoryService = new CategoryService(expenseService);
-        // ExpensesMenu
-        ExpensesMenu expensesMenu = new ExpensesMenu(expenseService, categoryService);
         // CategoriesMenu
         CategoriesMenu categoriesMenu = new CategoriesMenu(categoryService, expenseService);
+        // ExpensesMenu
+        ExpensesMenu expensesMenu = new ExpensesMenu(expenseService, categoryService, categoriesMenu);
         ConsoleTable table = DisplayChoices();
 
         

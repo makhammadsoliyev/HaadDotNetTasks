@@ -30,13 +30,15 @@ public class ExpenseService : IExpenseService, IExpenseManager
     public Expense GetById(int id)
         => expenseList.FirstOrDefault(expense => expense.Id == id);
 
-    public void Update(int id, Expense expense)
+    public Expense Update(int id, Expense expense)
     {
         Expense expenseToUpdate = expenseList.FirstOrDefault(expense => expense.Id == id);
         expenseToUpdate.Id = id;
         expenseToUpdate.Date = expense.Date;
         expenseToUpdate.Category = expense.Category;
         expenseToUpdate.Description = expense.Description;
+
+        return expenseToUpdate;
     }
 
     public decimal CalculateTotalExpenses()

@@ -186,8 +186,6 @@ public class CategoriesMenu
         Console.Clear();
         table.Options.EnableCount = false;
         table.Write(Format.MarkDown);
-        Console.WriteLine("Please enter any keyword to go back menu...");
-        Console.ReadKey();
     }
 
     public ConsoleTable DisplayChoices()
@@ -234,6 +232,8 @@ public class CategoriesMenu
                     break;
                 case "5":
                     GetAll();
+                    Console.WriteLine("Please enter any keyword to go back menu...");
+                    Console.ReadKey();
                     break;
                 case "0":
                     circle = false;
