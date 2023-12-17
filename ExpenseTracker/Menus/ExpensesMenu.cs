@@ -212,6 +212,7 @@ public class ExpensesMenu
                                 expense.Amount = amount;
                                 expense.Description = description;
                                 expense.Category = category;
+                                expense.Date = date;
                                 Expense updatedExpense = expenseService.Update(id, expense);
                                 ConsoleTable categoryTable = new ConsoleTable("ID", "Amount", "Description", "Date", "Category");
                                 categoryTable.AddRow(updatedExpense.Id, $"{updatedExpense.Amount:C4}", updatedExpense.Description, updatedExpense.Date, updatedExpense.Category.Name);

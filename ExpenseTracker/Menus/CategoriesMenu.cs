@@ -45,7 +45,7 @@ public class CategoriesMenu
         };
         Category AddedCategory = categoryService.Add(category);
         ConsoleTable table = new ConsoleTable("Id", "Name", "Description");
-        table.AddRow(category.Id, category.Name, category.Description);
+        table.AddRow(AddedCategory.Id, AddedCategory.Name, AddedCategory.Description);
         table.Options.EnableCount = false;
         Console.Clear();
         Console.WriteLine("Added category");
