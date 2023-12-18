@@ -12,13 +12,22 @@ public class PlaceService : IPlaceService
     }
     public Place Create(Place place)
     {
+        Place existPlace = places.FirstOrDefault(place => place.Number == place.Number);
+        if (existPlace is not null)
+            throw new Exception("This place already exists");
+
         places.Add(place);
+
         return place;
     }
 
     public bool Delete(int id)
     {
-        return places.Remove(places.FirstOrDefault(place => place.Id == id));
+        Place place = places.FirstOrDefault(place => place.Id == id);
+        if (place is null)
+            throw new Exception("This place was not found");
+
+        return places.Remove(place);
     }
 
     public List<Place> GetAll()
@@ -29,22 +38,27 @@ public class PlaceService : IPlaceService
 
     public Place GetById(int id)
     {
-        return places.FirstOrDefault(place => place.Id == id);
+        Place place = places.FirstOrDefault(place => place.Id == id);
+        if (place is null)
+            throw new Exception("This place was not found");
+
+        return place;
     }
 
     public Place Update(int id, Place place)
     {
         Place existPlace = places.FirstOrDefault(place=> place.Id == id);
-        if (existPlace == null)
-        {
-            existPlace.Id = id;
-            existPlace.Room = place.Room;
-            existPlace.Price = place.Price;
-            existPlace.Floor = place.Floor;
-            existPlace.Number = place.Number;
-            existPlace.Features = place.Features;
-            existPlace.IsAvailable = place.IsAvailable;
-        }
+        if (existPlace is null)
+            throw new Exception("This place was not found");
+
+        existPlace.Id = id;
+        existPlace.Room = place.Room;
+        existPlace.Price = place.Price;
+        existPlace.Floor = place.Floor;
+        existPlace.Number = place.Number;
+        existPlace.Features = place.Features;
+        existPlace.IsAvailable = place.IsAvailable;
+
         return existPlace;
     }
 }

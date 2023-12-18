@@ -18,7 +18,11 @@ public class FeatureService : IFeatureService
 
     public bool Delete(int id)
     {
-        return features.Remove(features.FirstOrDefault(feature => feature.Id == id));
+        Feature feature = features.FirstOrDefault(feature => feature.Id == id);
+        if (feature is null)
+            throw new Exception("This feature wsa not found");
+
+        return features.Remove(feature);
     }
 
     public List<Feature> GetAll()
@@ -26,17 +30,21 @@ public class FeatureService : IFeatureService
 
     public Feature GetById(int id)
     {
-        return features.FirstOrDefault(feature => feature.Id == id);
+        Feature feature = features.FirstOrDefault(feature => feature.Id == id);
+        if (feature is null)
+            throw new Exception("This feature was not found");
+
+        return feature;
     }
 
     public Feature Update(int id, Feature feature)
     {
         Feature existFeature = features.FirstOrDefault(feature => feature.Id == id);
-        if (existFeature is not null)
-        {
-            existFeature.Id = id;
-            existFeature.Name = feature.Name;
-        }
+        if (existFeature is null)
+            throw new Exception("This feature was not found");
+
+        existFeature.Id = id;
+        existFeature.Name = feature.Name;
 
         return existFeature;
     }
