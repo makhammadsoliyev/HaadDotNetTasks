@@ -17,6 +17,7 @@ public class BookingService : IBookingService
     }
     public Booking Create(Booking booking)
     {
+        User user = userService.GetById(booking.UserId);
         Place place = placeService.GetById(booking.PlaceId);
         if (!place.IsAvailable)
             throw new Exception("This place is not available");

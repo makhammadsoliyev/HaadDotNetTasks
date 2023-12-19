@@ -56,7 +56,7 @@ public class PlaceService : IPlaceService
         existPlace.Price = place.Price;
         existPlace.Floor = place.Floor;
         existPlace.Number = place.Number;
-        existPlace.Features = place.Features;
+        existPlace.Features.AddRange(place.Features);
         existPlace.IsAvailable = place.IsAvailable;
 
         return existPlace;

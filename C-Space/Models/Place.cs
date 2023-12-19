@@ -13,5 +13,5 @@ public class Place
     public string Room { get; set; }
     public bool IsAvailable { get; set; } = true;
     public decimal Price { get; set; }
-    public List<Feature> Features { get; set; }
+    public List<Feature> Features { get; set; } = new List<Feature>();
 }
