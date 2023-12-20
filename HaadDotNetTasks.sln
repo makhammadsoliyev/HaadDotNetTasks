@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTracker", "ExpenseTr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C-Space", "C-Space\C-Space.csproj", "{E3BAB15B-95E1-4899-805D-6453963BB972}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskScheduler", "TaskScheduler\TaskScheduler.csproj", "{B8A3E637-9D0F-4216-8555-6F1001DB642D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskScheduler", "TaskScheduler\TaskScheduler.csproj", "{B8A3E637-9D0F-4216-8555-6F1001DB642D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook", "ContactBook\ContactBook.csproj", "{A2177947-832F-483A-8080-639A2628D7C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{B8A3E637-9D0F-4216-8555-6F1001DB642D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A3E637-9D0F-4216-8555-6F1001DB642D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A3E637-9D0F-4216-8555-6F1001DB642D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2177947-832F-483A-8080-639A2628D7C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2177947-832F-483A-8080-639A2628D7C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2177947-832F-483A-8080-639A2628D7C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2177947-832F-483A-8080-639A2628D7C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
