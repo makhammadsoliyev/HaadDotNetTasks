@@ -16,7 +16,7 @@ public class MainMenu
         this.contactService = new ContactService();
         this.groupService = new GroupService(contactService);
 
-        this.groupMenu = new GroupMenu(groupService, contactService);
+        this.groupMenu = new GroupMenu(groupService);
         this.contactMenu = new ContactMenu(contactService);
     }
 

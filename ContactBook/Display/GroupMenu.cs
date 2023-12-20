@@ -7,12 +7,10 @@ namespace ContactBook.Display;
 public class GroupMenu
 {
     private readonly GroupService groupService;
-    private readonly ContactService contactService;
 
-    public GroupMenu(GroupService groupService, ContactService contactService)
+    public GroupMenu(GroupService groupService)
     {
         this.groupService = groupService;
-        this.contactService = contactService;
     }
 
     private void Create()
