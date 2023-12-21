@@ -9,5 +9,4 @@ public interface ITransactionService
     List<Transaction> GetAllByCardId(int cardId);
     List<Transaction> GetAllByCustomerId(int customerId);
     List<Transaction> GetAllByType(TransactionType transactionType);
-
 }
