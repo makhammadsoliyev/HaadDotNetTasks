@@ -11,7 +11,7 @@ public class ContactService : IContactService
     {
         this.contacts = new List<Contact>();
     }
-
+     
     public Contact Add(Contact contact)
     {
         var existContact = contacts.FirstOrDefault(c => c.Phone == contact.Phone);
